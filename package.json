@@ -1,0 +1,31 @@
+{
+  "name": "childrens-camp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm run devup && nodemon ./api/api.js",
+    "devup": "db-migrate up --config ./config/config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KonstantinovEgor/childrens-camp.git"
+  },
+  "keywords": [],
+  "author": "Thend-MiracleSw1n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KonstantinovEgor/childrens-camp/issues"
+  },
+  "homepage": "https://github.com/KonstantinovEgor/childrens-camp#readme",
+  "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21",
+    "pg": "^8.9.0",
+    "sequelize": "^6.29.0"
+  }
+}
