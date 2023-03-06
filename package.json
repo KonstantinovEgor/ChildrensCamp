@@ -20,10 +20,13 @@
   },
   "homepage": "https://github.com/KonstantinovEgor/childrens-camp#readme",
   "dependencies": {
+    "core-js": "^2.6.9",
+    "cors": "^2.8.5",
     "db-migrate": "^0.11.13",
     "db-migrate-pg": "^1.2.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-routes-mapper": "^1.1.0",
     "nodemon": "^2.0.21",
     "pg": "^8.9.0",
     "sequelize": "^6.29.0"

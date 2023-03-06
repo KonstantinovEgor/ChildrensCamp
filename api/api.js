@@ -1,8 +1,14 @@
+const mapRoutes = require('express-routes-mapper');
+
 const app = require('express')();
 
 const config = require('../config/index');
 const database = require('../config/database');
 
+app.use(require('cors')());
+app.use(require('express').json());
+app.use('/api/public', mapRoutes(config.publicRoutes, 'api/controllers/'));
+app.use('/api/private', mapRoutes(config.privateRoutes, 'api/controllers/'));
 app.use(require('../api/middlewares/errorHandlingMiddleware'));
 const server = require('http').createServer(app);
 

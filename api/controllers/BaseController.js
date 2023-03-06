@@ -32,9 +32,17 @@ class BaseController {
         }
     }
 
-    async del(modelName, pool = {}, req, res, next, sendAnswer = true) {
+    async del(modelName, where = {}, req, res, next, sendAnswer = true) {
         try {
+            await models[modelName].destroy({ where });
 
+            if (sendAnswer)
+                res.status(200).json({
+                    message: `Запись успешно удалена, где id=${where.id}`
+                });
+            else return {
+                message: `Запись успешно удалена, где id=${where.id}`
+            };
         } catch (error) {
             console.log(error);
             next(ApiError.badRequest({
